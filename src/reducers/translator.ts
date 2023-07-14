@@ -1,4 +1,5 @@
-import type { translatorState, translatorTypeAction } from "../types/translator";
+import type { translatorState, translatorTypeAction } from '../types/translator';
+import { AUTO_LANGUAGE } from '../constants/languages.d';
 
 export const initialTranslatorState: translatorState = {
     fromLanguage: 'auto',
@@ -9,11 +10,14 @@ export const initialTranslatorState: translatorState = {
 };
 
 const translatorReducerObject = (state: translatorState, action: translatorTypeAction) => ({
-    ['INTERCHANGE_LANGUAGES']: {
-        ...state,
-        fromLanguage: state.toLanguage,
-        toLanguage: state.fromLanguage,
-    },
+    ['INTERCHANGE_LANGUAGES']: 
+        state.fromLanguage === AUTO_LANGUAGE 
+        ? { ...state, } 
+        : { 
+            ...state, 
+            fromLanguage: state.toLanguage,
+            toLanguage: state.fromLanguage,
+        },
     ['SET_FROM_LANGUAGE']:  {
         ...state,
         fromLanguage: action.payload,
