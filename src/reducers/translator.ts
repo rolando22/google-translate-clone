@@ -12,23 +12,35 @@ export const initialTranslatorState: translatorState = {
 const translatorReducerObject = (state: translatorState, action: translatorTypeAction) => ({
     ['INTERCHANGE_LANGUAGES']: 
         state.fromLanguage === AUTO_LANGUAGE 
-        ? { ...state, } 
+        ? state 
         : { 
             ...state, 
             fromLanguage: state.toLanguage,
             toLanguage: state.fromLanguage,
+            result: '',
+            loading: state.fromText !== '',
         },
-    ['SET_FROM_LANGUAGE']:  {
-        ...state,
-        fromLanguage: action.payload,
-    },
-    ['SET_TO_LANGUAGE']: {
-        ...state,
-        toLanguage: action.payload,
-    },
+    ['SET_FROM_LANGUAGE']: 
+        state.fromLanguage === action.payload 
+        ? state 
+        : {
+            ...state,
+            fromLanguage: action.payload,
+            result: '',
+            loading: state.fromText !== '',
+        },
+    ['SET_TO_LANGUAGE']: 
+        state.toLanguage === action.payload 
+        ? state 
+        : {
+            ...state,
+            toLanguage: action.payload,
+            result: '',
+            loading: state.fromText !== '',
+        },
     ['SET_FROM_TEXT']: {
         ...state,
-        loading: true,
+        loading: action.payload !== '',
         fromText: action.payload,
         result: '',
     },
