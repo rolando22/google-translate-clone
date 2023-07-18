@@ -15,8 +15,8 @@ export function useTranslatorReducer() {
      const interchangeLanguages = () => dispatch({ type: 'INTERCHANGE_LANGUAGES', payload: ''});
      const setFromLanguage = (payload: FromLanguage) => dispatch({ type: 'SET_FROM_LANGUAGE', payload });
      const setToLanguage = (payload: Language) => dispatch({ type: 'SET_TO_LANGUAGE', payload });
-     const setFromText = (payload: Language) => dispatch({ type: 'SET_FROM_TEXT', payload });
-     const setResult = (payload: Language) => dispatch({ type: 'SET_RESULT', payload });
+     const setFromText = (payload: string) => dispatch({ type: 'SET_FROM_TEXT', payload });
+     const setResult = (payload: string) => dispatch({ type: 'SET_RESULT', payload });
 
      return {
         fromLanguage,

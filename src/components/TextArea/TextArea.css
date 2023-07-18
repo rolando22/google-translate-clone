@@ -1,0 +1,9 @@
+.TextArea-from,
+.TextArea-to {
+    border: 0;
+    height: 200px;
+}
+
+.TextArea-to {
+    background-color: #f5f5f5;
+}
