@@ -1,5 +1,17 @@
 #root {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.App-textarea-to {
+    position: relative;
+}
+
+.App-textarea-to-icons {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.4;
 }

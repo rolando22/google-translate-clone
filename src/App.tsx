@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ArrowIcon, LanguageSelector, TextArea } from './components/';
+import { ArrowIcon, ClipboardIcon, SpeakerIcon, LanguageSelector, TextArea } from './components/';
 
 import { useTranslatorReducer } from './hooks/useTranslatorReducer';
 import { useDebounce } from './hooks/useDebounce';
@@ -33,6 +33,13 @@ export function App() {
     const debouncedFromText = useDebounce<string>(fromText);
 
     const handleOnClicktoInterchangeLanguages = () => interchangeLanguages();
+    const handleOnClickClipboard = () => navigator.clipboard.writeText(result);
+    const handleOnClickSpeaker = () => {
+        const utterance = new SpeechSynthesisUtterance(result);
+        utterance.lang = toLanguage;
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    };
 
     useEffect(() => {
         if (debouncedFromText === '') return;
@@ -81,12 +88,32 @@ export function App() {
                             value={toLanguage}
                             onChange={setToLanguage}                        
                         />
-                        <TextArea 
-                            type={SectionType.To}
-                            loading={loading}
-                            value={result}
-                            onChange={setResult}
-                        />
+                        <Stack 
+                            className='App-textarea-to'
+                        >
+                            <TextArea 
+                                type={SectionType.To}
+                                loading={loading}
+                                value={result}
+                                onChange={setResult}
+                            />
+                            {result !== '' && 
+                                <div className='App-textarea-to-icons'>
+                                    <Button 
+                                        variant='link'
+                                        onClick={handleOnClickClipboard}
+                                    >
+                                        <ClipboardIcon />
+                                    </Button>
+                                    <Button 
+                                        variant='link'
+                                        onClick={handleOnClickSpeaker}
+                                    >
+                                        <SpeakerIcon />
+                                    </Button>
+                                </div>
+                            }
+                        </Stack>
                     </Stack>
                 </Col>
             </Row>

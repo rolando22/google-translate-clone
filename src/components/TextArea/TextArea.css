@@ -1,9 +1,28 @@
 .TextArea-from,
 .TextArea-to {
+    height: 250px;
     border: 0;
-    height: 200px;
+    padding: 10px;
+    overflow-y: inherit;
 }
 
 .TextArea-to {
     background-color: #f5f5f5;
+}
+
+.TextArea-from::-webkit-scrollbar,
+.TextArea-to::-webkit-scrollbar {
+	width: 0.3rem;
+}
+
+.TextArea-from::-webkit-scrollbar-track,
+.TextArea-to::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.TextArea-from::-webkit-scrollbar-thumb,
+.TextArea-to::-webkit-scrollbar-thumb {
+    background-color: #cfcece;
+    border-radius: 20px;
 }
