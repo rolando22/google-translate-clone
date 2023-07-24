@@ -1,5 +1,5 @@
-import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '../../constants/languages.d';
-import type { FromLanguage, Language } from '../../types/languages.d';
+import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '../../constants/languages';
+import { type FromLanguage, type Language } from '../../types/languages.d';
 import { SectionType } from '../../types/translator.d';
 
 import { Form } from 'react-bootstrap';

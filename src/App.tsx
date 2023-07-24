@@ -5,7 +5,7 @@ import { ArrowIcon, ClipboardIcon, SpeakerIcon, LanguageSelector, TextArea } fro
 import { useTranslatorReducer } from './hooks/useTranslatorReducer';
 import { useDebounce } from './hooks/useDebounce';
 
-import { AUTO_LANGUAGE } from './constants/languages.d';
+import { AUTO_LANGUAGE } from './constants/languages';
 import { SectionType } from './types/translator.d';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

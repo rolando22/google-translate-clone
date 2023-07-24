@@ -1,5 +1,5 @@
 import type { translatorState, translatorTypeAction } from '../types/translator';
-import { AUTO_LANGUAGE } from '../constants/languages.d';
+import { AUTO_LANGUAGE } from '../constants/languages';
 
 export const initialTranslatorState: translatorState = {
     fromLanguage: 'auto',

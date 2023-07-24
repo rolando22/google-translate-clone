@@ -1,4 +1,4 @@
-import type { FromLanguage, Language } from "./languages"
+import { type FromLanguage, type Language } from "./languages"
 
 export interface translatorState {
     fromLanguage: FromLanguage
