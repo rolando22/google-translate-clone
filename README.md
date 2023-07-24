@@ -7,9 +7,10 @@ Este repositorio contiene el código de una aplicación de un clone del traducto
 - Desarrollada con React para manipulación del DOM y reactividad de la aplicación.
 - Vite como empaquetador y SWC como transpilador.
 - TypeScript para el tipado del código.
+- Test end to end con Vitest
 - Uso de useReducer para manejar el estado del traductor.
 - Uso de customHooks:
     - Para el manejo del reducer del traductor.
     - Para manejar un delay en el tippeo del usuario antes de realizar la petición a la API.
 
-Puedes ver el demo aquí: ().
+Puedes ver el demo aquí: (https://rolando22.github.io/google-translate-clone/).
